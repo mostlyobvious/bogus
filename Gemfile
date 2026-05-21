@@ -12,7 +12,7 @@ gem 'relish'
 gem 'coveralls'
 gem 'wwtd'
 
-gem 'activerecord', '>= 3', '< 7'
+gem 'activerecord'
 gem 'activerecord-nulldb-adapter'
 
 gem 'minitest', '>= 5', '< 6'
