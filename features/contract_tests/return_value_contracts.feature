@@ -66,6 +66,7 @@ Feature: Return value contracts
     Then spec file with following content should fail:
     """ruby
     require_relative 'authentication_service'
+    require 'digest'
 
     describe AuthenticationService do
       verify_contract(:authentication_service)
@@ -83,6 +84,7 @@ Feature: Return value contracts
     Then spec file with following content should pass:
     """ruby
     require_relative 'authentication_service'
+    require 'digest'
 
     describe AuthenticationService do
       verify_contract(:authentication_service)
