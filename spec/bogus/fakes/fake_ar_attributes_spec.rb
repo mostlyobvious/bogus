@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'logger'
 require 'active_record'
 require 'nulldb'
 
