@@ -125,7 +125,7 @@ GEM
     minitar-cli (0.12)
       minitar (~> 0.12.0)
       powerbar (~> 1.0)
-    minitest (5.26.1)
+    minitest (5.18.1)
     multi_test (1.1.0)
     nenv (0.3.0)
     netrc (0.11.0)
@@ -204,7 +204,7 @@ DEPENDENCIES
   guard-cucumber
   guard-rspec
   libnotify
-  minitest (>= 4.7)
+  minitest (>= 4.7, < 5.19)
   rake
   rb-readline (~> 0.5.0)
   relish

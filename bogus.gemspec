@@ -37,7 +37,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'activerecord', '>= 3', '< 7'
   s.add_development_dependency 'activerecord-nulldb-adapter'
 
-  s.add_development_dependency 'minitest', '>= 4.7'
+  s.add_development_dependency 'minitest', '>= 4.7', '< 5.19'
 
   s.add_development_dependency "rb-readline", "~> 0.5.0" # fix for the can't modify string issue
 end
