@@ -40,4 +40,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'minitest', '>= 4.7', '< 5.19'
 
   s.add_development_dependency "rb-readline", "~> 0.5.0" # fix for the can't modify string issue
+
+  s.add_development_dependency "mutex_m"
+  s.add_development_dependency "base64"
 end
