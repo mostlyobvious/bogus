@@ -5,7 +5,7 @@ PATH
       dependor (>= 0.0.4)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activemodel (6.1.7.10)
       activesupport (= 6.1.7.10)

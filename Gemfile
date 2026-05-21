@@ -1,4 +1,4 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
 # Specify runtime dependencies in bogus.gemspec
 gemspec
