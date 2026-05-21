@@ -50,7 +50,7 @@ Feature: minitest support
     require_relative 'student'
     require_relative 'library'
 
-    class StudentTest < MiniTest::Unit::TestCase
+    class StudentTest < Minitest::Test
       def test_library_checkouts
         library = fake(:library)
         student = Student.new(library)
@@ -71,7 +71,7 @@ Feature: minitest support
     require_relative 'student'
     require_relative 'library'
 
-    class StudentTest < MiniTest::Unit::TestCase
+    class StudentTest < Minitest::Test
       def setup
         @library = fake(:library)
       end

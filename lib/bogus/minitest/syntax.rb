@@ -1,7 +1,7 @@
 require 'forwardable'
 
 module Bogus
-  class MiniTestSyntax
+  class MinitestSyntax
     extend Takes
     extend Forwardable
     takes :context
@@ -16,12 +16,7 @@ module Bogus
     end
 
     def after_suite(&block)
-      # minitest 5 vs 4.7
-      if defined? ::Minitest.after_run
-        ::Minitest.after_run(&block)
-      else
-        MiniTest::Unit.after_tests(&block)
-      end
+      ::Minitest.after_run(&block)
     end
   end
 end

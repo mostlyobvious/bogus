@@ -1,7 +1,8 @@
-gem 'minitest', '>= 4.7'
+gem 'minitest', '>= 5', '< 6'
+require 'minitest'
 require 'bogus'
 
-module MiniTest::Assertions
+module Minitest::Assertions
   def assert_received(subject, method, args, message = nil)
     with_bogus_matcher_for(subject, method, args) do |matcher, result|
       assert(result, message || matcher.failure_message_for_should)
@@ -37,13 +38,6 @@ module Bogus::Minitest
   end
 end
 
-# minitest 5 vs 4.7
-if defined? ::Minitest::Test
-  class ::Minitest::Test
-    include Bogus::Minitest
-  end
-else
-  class MiniTest::Unit::TestCase
-    include Bogus::Minitest
-  end
+class Minitest::Test
+  include Bogus::Minitest
 end
