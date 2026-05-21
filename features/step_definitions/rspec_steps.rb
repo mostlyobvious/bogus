@@ -12,18 +12,6 @@ Given /^a spec file named "([^"]*)" with:$/ do |file_name, string|
   }
 end
 
-Then /^the specs should fail$/ do
-  steps %Q{
-    Then the exit status should be 1
-  }
-end
-
-Then /^the specs should pass$/ do
-  steps %Q{
-    Then the exit status should be 0
-  }
-end
-
 When /^I run spec with the following content:$/ do |string|
   file_name = "foo_#{rand(1000000)}_spec.rb"
 
@@ -45,7 +33,7 @@ Then /^spec file with following content should pass:$/ do |string|
     """ruby
     #{string}
     """
-    Then the specs should pass
+    Then the exit status should be 0
   }
 end
 
@@ -55,7 +43,7 @@ Then /^spec file with following content should fail:$/ do |string|
     """ruby
     #{string}
     """
-    Then the specs should fail
+    Then the exit status should be 1
   }
 end
 
@@ -69,17 +57,19 @@ Then /^the following test should pass:$/ do |string|
       end
     end
     """
-    Then the specs should pass
+    Then the exit status should be 0
   }
 end
 
 Then /^minitest file "([^"]*)" with the following content should (pass|fail):$/ do |file_name, pass_fail, string|
+  exit_status = pass_fail == 'pass' ? 0 : 1
+
   steps %Q{
     Given a file named "#{file_name}" with:
     """ruby
     #{string}
     """
     When I run `ruby #{file_name}`
-    Then the specs should #{pass_fail}
+    Then the exit status should be #{exit_status}
   }
 end
