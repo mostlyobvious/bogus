@@ -16,6 +16,12 @@ describe Bogus::VerifiesStubDefinition do
 
     def var_args(x, *y)
     end
+
+    def keyword_args(foo:)
+    end
+
+    def optional_keyword_args(foo: 1)
+    end
   end
 
   let(:object) { ExampleForVerify.new(1) }
@@ -82,6 +88,26 @@ describe Bogus::VerifiesStubDefinition do
     context "method with infinite number of arguments" do
       it_allows_argument_numbers :var_args, 1000
       it_disallows_argument_numbers :var_args, 0
+    end
+
+    context "method with required keyword arguments" do
+      it "allows the required keywords" do
+        it_allows(:keyword_args, [{foo: 1}])
+      end
+
+      it "disallows missing keywords" do
+        it_disallows(:keyword_args, [])
+      end
+    end
+
+    context "method with optional keyword arguments" do
+      it "allows keyword arguments" do
+        it_allows(:optional_keyword_args, [{foo: 1}])
+      end
+
+      it "allows no arguments" do
+        it_allows(:optional_keyword_args, [])
+      end
     end
   end
 

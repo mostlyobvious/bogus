@@ -23,9 +23,17 @@ module Bogus
       object = Object.new
       fake_method = method_stringifier.stringify(method, "")
       object.instance_eval(fake_method)
-      object.send(method.name, *args)
+      if keyword_arguments?(method) && args.last.is_a?(Hash)
+        object.send(method.name, *args[0...-1], **args.last)
+      else
+        object.send(method.name, *args)
+      end
     rescue ArgumentError
       wrong_arguments!(method, args)
+    end
+
+    def keyword_arguments?(method)
+      method.parameters.any? { |type, _| [:key, :keyreq, :keyrest].include?(type) }
     end
 
     def wrong_arguments!(method, args)
