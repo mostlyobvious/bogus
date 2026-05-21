@@ -33,7 +33,7 @@ module Bogus
       when :opt then default ? "#{name} = #{default}" : name
       when :req then name
       when :rest then "*#{name == :* ? 'rest' : name}"
-      when :keyrest then "**#{name}"
+      when :keyrest then "**#{name == :** ? 'kwargs' : name}"
       else raise "unknown argument type: #{type}"
       end
     end
