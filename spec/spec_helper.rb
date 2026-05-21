@@ -1,6 +1,19 @@
 require 'simplecov'
 begin
   require "coveralls"
+
+  # coveralls 0.8.x pins Net::HTTP#ssl_version to TLSv1, which Coveralls no
+  # longer accepts. Force TLS 1.2 while keeping the rest of its client setup.
+  Coveralls::API.singleton_class.prepend(Module.new do
+    def build_client(uri)
+      super.tap do |client|
+        client.ssl_version = 'TLSv1_2'
+      end
+    end
+
+    private :build_client
+  end)
+
   SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
     SimpleCov::Formatter::HTMLFormatter,
     Coveralls::SimpleCov::Formatter])
