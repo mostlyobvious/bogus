@@ -8,10 +8,6 @@ gem 'rspec'
 gem 'cucumber'
 gem 'aruba'
 
-gem 'relish'
-gem 'coveralls'
-gem 'wwtd'
-
 gem 'activerecord'
 gem 'activerecord-nulldb-adapter'
 
