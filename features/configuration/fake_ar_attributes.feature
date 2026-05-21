@@ -20,7 +20,6 @@ Feature: fake_ar_attributes
   Scenario: Adding missing accessors to AR classes
     Given a file named "blog_post.rb" with:
     """ruby
-    require 'logger'
     require 'active_record'
     require 'nulldb'
 
