@@ -43,4 +43,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "mutex_m"
   s.add_development_dependency "base64"
+  s.add_development_dependency "benchmark"
 end
