@@ -43,7 +43,7 @@ end
 
 ## Documentation
 
-[You can find more detailed (and executable) documentation on Relish.][docs]
+[You can find more detailed (and executable) documentation online.][docs]
 
 ## License
 
@@ -56,11 +56,11 @@ MIT. See the [LICENSE file][license].
 * [Piotr Szotkowski](https://github.com/chastell)
 * [Marek Nowak](https://github.com/yundt)
 
-[docs]: http://www.relishapp.com/bogus/bogus/docs 
+[docs]: https://mostlyobvious.github.io/bogus/
 
-[safe-stubbing]: https://www.relishapp.com/bogus/bogus/docs/safe-stubbing
-[fakes]: https://www.relishapp.com/bogus/bogus/docs/fakes
-[ar-support]: https://www.relishapp.com/bogus/bogus/docs/configuration/fake-ar-attributes
-[global-configuration]: https://www.relishapp.com/bogus/bogus/docs/fakes/global-fake-configuration
-[contract-tests]: https://www.relishapp.com/bogus/bogus/docs/contract-tests
+[safe-stubbing]: https://mostlyobvious.github.io/bogus/safe_stubbing/
+[fakes]: https://mostlyobvious.github.io/bogus/fakes/
+[ar-support]: https://mostlyobvious.github.io/bogus/configuration/fake_ar_attributes/
+[global-configuration]: https://mostlyobvious.github.io/bogus/fakes/global_fake_configuration/
+[contract-tests]: https://mostlyobvious.github.io/bogus/contract_tests/
 [license]: features/license.md
