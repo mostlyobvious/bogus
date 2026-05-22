@@ -2,13 +2,6 @@
 
 Bogus aims to make your unit tests more reliable by ensuring that you don't stub or mock methods that don't actually exist in the mocked objects.
 
-[![build status](https://secure.travis-ci.org/psyho/bogus.png)](http://travis-ci.org/psyho/bogus)
-[![Code Climate](https://codeclimate.com/github/psyho/bogus.png)](https://codeclimate.com/github/psyho/bogus)
-[![Coverage Status](https://coveralls.io/repos/psyho/bogus/badge.png?branch=master)](https://coveralls.io/r/psyho/bogus?branch=master)
-[![Gem Version](https://badge.fury.io/rb/bogus.png)](http://badge.fury.io/rb/bogus)
-[![Dependency Status](https://gemnasium.com/psyho/bogus.png)](https://gemnasium.com/psyho/bogus)
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/9908a24d18bc26923a8ab08c28fcc8e5 "githalytics.com")](http://githalytics.com/psyho/bogus)
-
 ## Example
 
 ```ruby
