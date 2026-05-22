@@ -1,0 +1,8 @@
+source "https://rubygems.org"
+
+gem "nanoc"
+gem "cucumber-gherkin"
+gem "kramdown"
+gem "rouge"
+gem "adsf"
+gem "webrick"

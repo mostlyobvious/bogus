@@ -1,0 +1,27 @@
+preprocess do
+  Relish.generate(@items)
+end
+
+compile "/404.html" do
+end
+
+route "/404.html" do
+  "/404.html"
+end
+
+compile "/assets/**/*" do
+end
+
+route "/assets/**/*" do
+  item.identifier.to_s
+end
+
+compile "/**/*.html" do
+  layout "/default.*"
+end
+
+route "/**/*.html" do
+  item[:path]
+end
+
+layout "/**/*", :erb

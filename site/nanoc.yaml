@@ -1,0 +1,4 @@
+string_pattern_type: glob
+
+prune:
+  auto_prune: true

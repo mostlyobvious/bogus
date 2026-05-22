@@ -11,3 +11,9 @@ pkg/*
 tags
 tags
 tmp/*
+
+site/output/
+site/tmp/
+site/crash.log
+site/vendor/
+!site/Gemfile.lock

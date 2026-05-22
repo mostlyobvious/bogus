@@ -1,0 +1,45 @@
+<%
+  here = @item[:url]
+  link = ->(target) { Relish.relative(here, target) }
+%><!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= @item[:title] %> &middot; Bogus</title>
+    <meta name="description" content="Create fakes to make your isolated unit tests reliable.">
+    <link rel="stylesheet" href="<%= link.call("/assets/css/style.css") %>">
+    <link rel="stylesheet" href="<%= link.call("/assets/css/syntax.css") %>">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="layout">
+      <aside class="sidebar">
+        <a class="brand" href="<%= link.call("/") %>">Bogus</a>
+        <p class="tagline">Create fakes to make your isolated unit tests reliable.</p>
+        <nav class="site-nav" aria-label="Documentation">
+          <ul>
+            <% Relish.nav.each do |entry| %>
+              <li>
+                <a href="<%= link.call(entry[:url]) %>"<%= ' class="active" aria-current="page"' if entry[:url] == here %>><%= entry[:title] %></a>
+                <% if entry[:children] %>
+                  <ul>
+                    <% entry[:children].each do |child| %>
+                      <li><a href="<%= link.call(child[:url]) %>"<%= ' class="active" aria-current="page"' if child[:url] == here %>><%= child[:title] %></a></li>
+                    <% end %>
+                  </ul>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </nav>
+      </aside>
+      <main id="main" class="content">
+        <%= yield %>
+        <footer class="site-footer">
+          Generated from the <code>features/</code> directory of the Bogus repository.
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

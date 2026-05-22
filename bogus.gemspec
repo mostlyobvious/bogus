@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Create fakes to make your isolated unit tests reliable.}
   s.description = %q{Decreases the need to write integration tests by ensuring that the things you stub or mock actually exist.}
 
-  s.files         = `git ls-files`.split("\n")
+  s.files         = `git ls-files`.split("\n").reject { |f| f.start_with?("site/") }
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
